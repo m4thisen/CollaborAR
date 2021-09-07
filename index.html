@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollaborAR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image" href="app_icon-playstore.png">
+</head>
+<body>
+    <section class="main">
+        <header>
+            <a href="#" class="logo"><img src="app_icon-playstore.png"></a>
+            <ul>
+                <li><a href="index.html" class="active" target="_blank">Home</a></li>
+                <li><a href="https://www.ort.edu.ar/" target="_blank">Ort Argentina</a></li>
+                <li><a href="https://www.ciudadesdelfuturo.com.ar/" target="_blank">Ciudades del futuro</a></li>
+            </ul>
+            <a href="#" class="app" id="app"><ion-icon name="download-outline"></ion-icon>Descarga la app</a>
+        </header>
+        <div class="contentBx">
+           <div class="text">
+               <h2>CollaborAR</h2>
+               <p>‘CollaborAR’ es un proyecto de la carrera 'Analista en sistemas' de la institucion ORT Argentina, hecha por alumnos para el organismo Ciudades del futuro, el cual describe una red social orientada a fomentar la sustentabilidad del planeta. El objetivo de este portal es que los usuarios puedan publicar sus iniciativas en pos del cuidado del medio ambiente.</p>
+               <h4>Descarga la app</h4>
+               <a href="#" class="btn" id="play-store"><ion-icon name="logo-google-playstore"></ion-icon>Play Store</a>
+           </div> 
+           <div class="dots">
+               <span class="dot active"></span>
+               <span class="dot"></span>
+               <span class="dot"></span>
+               <span class="dot"></span>
+               <span class="dot"></span>
+               <span class="dot"></span>
+               <span class="dot"></span>
+               <span class="dot"></span>
+           </div>
+           <div class="imgBx">
+               <img src="screens/splash.png" class="slides active">
+               <img src="screens/muro.png" class="slides">
+               <img src="screens/pendiente.png" class="slides">
+               <img src="screens/rechazada.png" class="slides">
+               <img src="screens/perfil.png" class="slides">
+               <img src="screens/subir.png" class="slides">
+               <img src="screens/config.png" class="slides">
+               <img src="screens/login.png" class="slides">
+           </div> 
+        </div>
+        <ul class="sci">
+            <li><a href="#" target="_blank"><ion-icon name="logo-linkedin"></ion-icon> Nicolas Ortola</a></li>
+            <li><a href="#" target="_blank"><ion-icon name="logo-linkedin"></ion-icon> Gaston Sequeira</a></li>
+            <li><a href="#" target="_blank"><ion-icon name="logo-linkedin"></ion-icon> Leonela Pretti Molina</a></li>
+            <li><a href="#" target="_blank"><ion-icon name="logo-linkedin"></ion-icon> Matias Casullo</a></li>
+        </ul>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        const slides = document.querySelectorAll('.slides');
+        const dots = document.querySelectorAll('.dot');
+        const app = document.getElementById('app');
+        const ps = document.getElementById('play-store');
+        app.addEventListener('click',alerta);
+        ps.addEventListener('click',alerta);
+        function alerta(){
+            alert('Proximamente en Play Store...');
+        }
+        function SetActive(i){
+            for (slide of slides){
+                slide.classList.remove('active');
+                slides[i].classList.add('active');  
+            }
+            for (dot of dots){
+                dot.classList.remove('active');
+                dots[i].classList.add('active');  
+            }
+        }
+        for (let j=0; j<dots.length; j++){
+            dots[j].addEventListener('click', function(){
+                SetActive(j);
+            })
+        }
+    </script>
+</body>
+</html>
